@@ -1,0 +1,13 @@
+project_id = "psizqlhatnopgmwhjykd"
+
+[functions.create-admin-user]
+verify_jwt = false
+
+[functions.configure-webhook]
+verify_jwt = false
+
+[functions.webhook-handler]
+verify_jwt = false
+
+[functions.import-contacts-batch]
+verify_jwt = false
