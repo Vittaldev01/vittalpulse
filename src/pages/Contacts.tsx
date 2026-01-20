@@ -3,9 +3,11 @@ import { useContactLists } from "@/hooks/useContactLists";
 import { ContactListCard } from "@/components/contacts/ContactListCard";
 import { NewListDialog } from "@/components/contacts/NewListDialog";
 import { ContactSearchPanel } from "@/components/contacts/ContactSearchPanel";
+import { useNavigate } from "react-router";
 
 export default function Contacts() {
   const { lists, isLoading, createList, deleteList } = useContactLists();
+  const navigate = useNavigate();
 
   const handleCreateList = (name: string, description?: string) => {
     createList.mutate({ name, description });
@@ -19,7 +21,7 @@ export default function Contacts() {
 
   const handleImportSuccess = () => {
     // Refetch da lista após importação bem-sucedida
-    window.location.reload();
+    navigate("/contacts");
   };
 
   return (
